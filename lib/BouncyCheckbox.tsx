@@ -32,6 +32,7 @@ export interface IBouncyCheckboxProps {
   useNativeDriver?: boolean;
   textDecoration?: boolean;
   checkIconImageSource?: ISource;
+  borderColor?: string;
   onPress: (isChecked: boolean) => void;
 }
 
@@ -100,13 +101,14 @@ class BouncyCheckbox extends React.Component<
       fillColor = "#ffc484",
       ImageComponent = Image,
       unfillColor = "transparent",
+      borderColor = "#ffc484",
       checkIconImageSource = defaultCheckImage,
     } = this.props;
     return (
       <Animated.View
         style={[
           { transform: [{ scale: springValue }] },
-          _iconContainer(size, checked, fillColor, unfillColor),
+          _iconContainer(size, checked, fillColor, unfillColor, borderColor),
           iconStyle,
         ]}
       >

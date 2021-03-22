@@ -1,4 +1,4 @@
-import { ViewStyle, TextStyle, ImageStyle, StyleSheet } from "react-native";
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
 
 interface Style {
   container: ViewStyle;
@@ -11,12 +11,13 @@ export const _iconContainer = (
   checked: boolean,
   fillColor: string,
   unfillColor: string,
+  borderColor: string,
 ): ViewStyle => {
   return {
     width: size,
     height: size,
     borderWidth: 1,
-    borderColor: "#ffc484",
+    borderColor: borderColor,
     borderRadius: size / 2,
     alignItems: "center",
     justifyContent: "center",
